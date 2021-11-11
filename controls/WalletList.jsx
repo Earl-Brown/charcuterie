@@ -14,11 +14,12 @@ export default function WalletList(props) {
 		listChanged(newList)
 	}
 
-	return <>
+	return <div style={style}>
 		{wallets.map(w =>
-			<div style={{ style }}>
-				<WalletAddress>{w}</WalletAddress><RemoveButton onClick={e => removeWallet(w)} style={{ right: "1em;" }} />
+			<div style={{ position: "relative" }}>
+				<RemoveButton onClick={e => removeWallet(w)} style={{ "padding-left": 0, marginLeft: 0 }} />
+				<WalletAddress>{w}</WalletAddress>
 			</div>
 		)}
-	</>
+	</div>
 }

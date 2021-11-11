@@ -48,9 +48,12 @@ export default function Home() {
 			<Head><title>{AppDescription}</title></Head>
 			<Title>{AppDescription}</Title>
 			<div className={`${styles["container"]}`}>
-				<WalletList listChanged={newList => updateWalletList(newList)} wallets={state.wallets} style={{ width: "100%" }}></WalletList>
-				<WalletInput value={editingWallet} onChange={e => WalletChanged(e.target.value)} style={{ width: "75%" }}></WalletInput>
-				<AddButton onClick={_ => AddWallet(editingWallet)} style={{ fontSize: "110%" }}></AddButton>
+				<WalletList listChanged={newList => updateWalletList(newList)} wallets={state.wallets} style={{ width: "75%", padding: "0.25em 0" }}></WalletList>
+
+				<div style={{ width: "75%" }}>
+					<WalletInput value={editingWallet} onChange={e => WalletChanged(e.target.value)} ></WalletInput>
+					<AddButton onClick={_ => AddWallet(editingWallet)} style={{ fontSize: "110%" }}></AddButton>
+				</div>
 			</div>
 			<Pre>Oh, hey!</Pre>
 		</>

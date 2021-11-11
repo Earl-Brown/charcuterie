@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const WalletAddress = styled.label`
 	&& {
+		width: 30em; font-size: 14pt;
 		background-color: gainsboro;
 	}
 `
@@ -20,7 +21,7 @@ export const Title = styled.h1`
 `
 
 export const WalletInput = styled.input`
-	width: 100%; font-size: 14pt;
+	width: 30em; font-size: 14pt;
 `
 
 export const Pre = styled.pre`
