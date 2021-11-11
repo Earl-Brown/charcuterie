@@ -19,7 +19,7 @@ export const Title = styled.h1`
 	border-radius: 50px 50px 0px 0px;
 `
 
-export const AddressInput = styled.input`
+export const WalletInput = styled.input`
 	width: 100%; font-size: 14pt;
 `
 
