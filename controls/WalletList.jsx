@@ -15,8 +15,8 @@ export default function WalletList(props) {
 	}
 
 	return <div style={style}>
-		{wallets.map(w =>
-			<div style={{ position: "relative" }}>
+		{wallets.map((w, idx) =>
+			<div key={idx} style={{ position: "relative" }}>
 				<RemoveButton onClick={e => removeWallet(w)} style={{ "padding-left": 0, marginLeft: 0 }} />
 				<Space />
 				<WalletAddress>{w}</WalletAddress>
