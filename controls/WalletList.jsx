@@ -1,4 +1,4 @@
-import { WalletAddress } from "../components/typeography"
+import { WalletAddress, Space } from "../components/typeography"
 import { RemoveButton } from "../components/iconography"
 
 export default function WalletList(props) {
@@ -18,6 +18,7 @@ export default function WalletList(props) {
 		{wallets.map(w =>
 			<div style={{ position: "relative" }}>
 				<RemoveButton onClick={e => removeWallet(w)} style={{ "padding-left": 0, marginLeft: 0 }} />
+				<Space />
 				<WalletAddress>{w}</WalletAddress>
 			</div>
 		)}

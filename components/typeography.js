@@ -27,3 +27,5 @@ export const WalletInput = styled.input`
 export const Pre = styled.pre`
 	padding: 3em;
 `
+
+export const Space = _ => <>&nbsp;</>

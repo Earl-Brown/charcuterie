@@ -4,7 +4,7 @@ import { useRequest } from 'ahooks'
 import styles from '../styles/Home.module.css'
 import WalletList from '../controls/WalletList'
 import { GetState, SetState, DefaultState } from '../services/stateservice'
-import { Pre, Title, WalletInput } from '../components/typeography'
+import { Pre, Title, WalletInput, Space } from '../components/typeography'
 import { AddButton } from '../components/iconography'
 
 const AppDescription = "Charcuterie - A dashboard for your stakes"
@@ -52,6 +52,7 @@ export default function Home() {
 
 				<div style={{ width: "75%" }}>
 					<WalletInput value={editingWallet} onChange={e => WalletChanged(e.target.value)} ></WalletInput>
+					<Space />
 					<AddButton onClick={_ => AddWallet(editingWallet)} style={{ fontSize: "110%" }}></AddButton>
 				</div>
 			</div>
