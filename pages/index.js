@@ -6,6 +6,7 @@ import WalletList from '../controls/WalletList'
 import { GetState, SetState, DefaultState } from '../services/stateservice'
 import { Pre, Title, WalletInput, Space } from '../components/typeography'
 import { AddButton } from '../components/iconography'
+import DelegateListManager from '../controls/delegateListManager'
 
 const AppDescription = "Charcuterie - A dashboard for your stakes"
 
@@ -23,18 +24,17 @@ export default function Home() {
 	if (loading) return <>...retrieving configuration</>
 	if (error) return <>Unable to load configuration: {error.message}</>
 
-	const AddWallet = w => {
-		const newList = [...state.wallets, w]
-		updateWalletList(newList)
-		setEditingWallet("")
-	}
-
 	const updateWalletList = wallets => {
 		setState({
 			...state,
 			wallets: wallets
 		})
+	}
 
+	const AddWallet = w => {
+		const newList = [...state.wallets, w]
+		updateWalletList(newList)
+		setEditingWallet("")
 	}
 
 	const WalletChanged = w => {
@@ -55,6 +55,11 @@ export default function Home() {
 					<Space />
 					<AddButton onClick={_ => AddWallet(editingWallet)} style={{ fontSize: "110%" }}></AddButton>
 				</div>
+				{
+					(state.wallets?.length ?? 0 > 0)
+						? <DelegateListManager harmonyAddresses={state.wallets} />
+						: <></>
+				}
 			</div>
 			<Pre>Oh, hey!</Pre>
 		</>
