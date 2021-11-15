@@ -19,10 +19,5 @@ export default function DelegateListManager(props) {
 
 	if (list == null) setList(delegates)
 
-	return <div style={{
-		marginTop: "1em", border: "2px solid green"
-	}}>
-		<div>Found {list?.length ?? 0} delegates</div>
-		<DelegateList delegates={list} />
-	</div >
+	return <DelegateList delegates={list} />
 }

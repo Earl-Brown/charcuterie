@@ -7,6 +7,6 @@ export function DelegateList(props) {
 	console.log("Listing delegates", delegates)
 
 	return <div style={{ border: "1 px solid red" }}>
-		{[...(delegates ?? [])].map(d => <DelegateCard key={d} delegate={d}>d</DelegateCard>)}
+		{[...(delegates ?? [])].map((d, idx) => <DelegateCard key={idx} delegate={d}>d</DelegateCard>)}
 	</div>
 }
