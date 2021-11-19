@@ -12,6 +12,21 @@ const ListButtonStyle = {
 	padding: 0,
 }
 
+const iconButtonStyle = {
+	cursor: "pointer",
+	fontSize: "larger",
+	fontWeight: "bold",
+	border: "none",
+	width: "auto",
+	height: "auto",
+	margin: 0,
+	padding: 0,
+	backgroundColor: "transparent",
+	textAlign: "right"
+}
+
 export const RemoveButton = props => { return <button {...props} style={{ ...ListButtonStyle, color: "red" }}>{"\u00D7"}</button> }
 
 export const AddButton = props => { return <button {...props} style={{ ...ListButtonStyle, color: "green" }}>{"\u002B"}</button> }
+
+export const ConfigButton = props => { return <button {...props} style={{ ...iconButtonStyle, color: "silver" }}>{'\u2699'}</button> }

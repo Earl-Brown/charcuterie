@@ -1,13 +1,13 @@
 import { useRequest } from 'ahooks'
 import { useState } from 'react'
 import { DelegateList } from "./delegatelist"
-import { GetDelegatesForHarmonyAddresses } from '../services/delegateservice'
+import { GetDelegationsForHarmonyAddresses } from '../services/delegateservice'
 
 export default function DelegateListManager(props) {
 	const { harmonyAddresses } = props
 
 	const [list, setList] = useState(null)
-	const { data: delegates, loading, error } = useRequest(() => GetDelegatesForHarmonyAddresses(harmonyAddresses))
+	const { data: delegates, loading, error } = useRequest(() => GetDelegationsForHarmonyAddresses(harmonyAddresses))
 
 	console.log("wallet addresses", harmonyAddresses)
 	console.log("delegates", delegates)
