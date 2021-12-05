@@ -2,6 +2,9 @@
 // todo: change to use app storage
 export const DefaultState = {
 	wallets: [],
+	delegators: {
+
+	},
 	config: {
 		updateInterval: 5 * 60 * 1000,	 // 5 minutes
 		showNotification: true
@@ -18,4 +21,24 @@ export const GetState = async () => new Promise((resolve, reject) => {
 export const SetState = async newState => new Promise((resolve, reject) => {
 	state = { ...newState }
 	resolve(state)
+})
+
+export const SetDelegateSettings = async (d, settings) => new Promise((resolve, reject) => {
+	config.delegators[d.identity] = settings
+	resolve(settings)
+})
+
+export const GetDelegateSettings = async delegateId => new Promise((resolve, reject) => {
+	const config = {
+		alerts: {
+			rate: Math.min(d.rate * 2, 100),
+			change: Math.min(d.rate * 2, 100)
+		},
+		...state.delegators[delegateId],
+		lastRate: d.rate,
+	}
+
+	SetDelegateSettings(delegateId, config)
+
+	resolve(config)
 })
