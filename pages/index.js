@@ -9,6 +9,7 @@ export default function Home() {
 	return <>
 		<Center style={{ borderRadius: "30px 30px 0 0" }}><Title >{i18n.appTitle}</Title></Center>
 		<Divider size={12} style={{ opacity: "0.3", borderRadius: "10px" }}></Divider>
+		<br />
 		<AccountList />
 		<Deck />
 	</>
