@@ -2,7 +2,7 @@
 //	load/save configuration from cookies
 
 const state = {
-	accounts: ["0x9fFa90c8D6fBcC44007283BC501556864b756E76"],
+	wallets: ["0x9fFa90c8D6fBcC44007283BC501556864b756E76"],
 	validators: [
 		{
 			address: "",
@@ -18,28 +18,29 @@ const state = {
 
 }
 
-export const GetAccounts = async () => new Promise((resolve, reject) => {
-	resolve(state.accounts)
+export const GetWallets = async () => new Promise((resolve, reject) => {
+	resolve(state.wallets)
 })
 
-export const AddAccount = async newAddress => new Promise((resolve, reject) => {
-	const pruned = state.accounts.filter(a => a !== newAddress)
+export const AddWallet = async newAddress => new Promise((resolve, reject) => {
+	const pruned = state.wallets.filter(a => a !== newAddress)
 	const updated = [...pruned, newAddress]
 
-	state = { ...state, accounts: updated }
+	state = { ...state, wallets: updated }
+	resolve(updated)
 })
 
-export const RemoveAccount = async addressToRemove => new Promise((resolve, reject) => {
+export const RemoveWallet = async addressToRemove => new Promise((resolve, reject) => {
 
-	const accounts = state.accounts.filter(a => a.address !== addressToRemove)
+	const wallets = state.wallets.filter(w => w !== addressToRemove)
 
 	state = {
-		...state, accounts: accounts
+		...state, wallets: wallets
 	}
 
-	return state.accounts
-
 	// save state to local storage
+	resolve(wallets)
+
 })
 
 export const GetValidators = async () => new Promise((resolve, reject) => {
