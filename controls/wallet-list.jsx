@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { AddWallet, RemoveWallet } from "../services/appstateservice"
-import { TextInput, ActionIcon, Paper, Title, Group } from "@mantine/core"
+import { Accordion, TextInput, ActionIcon, Paper, Title, Group } from "@mantine/core"
 import { FaTrashAlt } from 'react-icons/fa'
 
 export const WalletList = props => {
@@ -42,19 +42,24 @@ export const WalletList = props => {
 
 	return <>
 		<Paper padding="sm" shadow="xs" radius={0} style={{ backgroundColor: "#DDEFEFDD" }}>
-			<Title order={3} style={{ width: "100%", borderBottom: "1px solid black", paddingBottom: 0, marginBottom: "0.25em", }}>Wallets</Title>
-			{wallets.map((a, idx) => Wallet(a))}
+			<Accordion initialItem={0} iconPosition="right">
+				<Accordion.Item label="Wallets">
+					{wallets.map((a, idx) => Wallet(a))}
 
-			<TextInput
-				placeholder="Add a wallet, hit ENTER when you're done"
-				size="lg"
-				value={currentInput}
-				onChange={e => setInput(e.target.value)}
-				onKeyUp={e => addWalletIfInputComplete(e)}
-				styles={{ input: { fontSize: "x-large" } }}
-				wrapperProps={{ style: { marginTop: "0.75em" } }}
-			/>
+					<TextInput
+						placeholder="Add a wallet, hit ENTER when you're done"
+						size="lg"
+						value={currentInput}
+						onChange={e => setInput(e.target.value)}
+						onKeyUp={e => addWalletIfInputComplete(e)}
+						styles={{ input: { fontSize: "x-large" } }}
+						wrapperProps={{ style: { marginTop: "0.75em" } }}
+					/>
 
+				</Accordion.Item>
+
+			</Accordion>
 		</Paper>
 	</>
+
 }
