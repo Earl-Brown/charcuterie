@@ -41,19 +41,31 @@ export const WalletList = props => {
 	</Group>
 
 	return <>
-		<Paper padding="sm" shadow="xs" radius={0} style={{ backgroundColor: "#DDEFEFDD" }}>
-			<Accordion initialItem={0} iconPosition="right">
-				<Accordion.Item label="Wallets">
-					{wallets.map((a, idx) => Wallet(a))}
-
+		<Paper padding={0} shadow="xs" radius={0} style={{ backgroundColor: "#DDEFEFDD" }}>
+			<Accordion styles={{
+				label: { fontSize: "x-large", fontWeight: "bold" },
+				control: { padding: 0 },
+				contentInner: { padding: 0 }
+			}}
+				initialItem={0}
+				iconPosition="right"
+			>
+				<Accordion.Item label="Wallets"
+					style={{ padding: 0 }}
+				>
+					<div style={{ paddingTop: "0.5em" }}>
+						{wallets.map((a, idx) => Wallet(a))}
+					</div>
 					<TextInput
 						placeholder="Add a wallet, hit ENTER when you're done"
-						size="lg"
+						size="sm"
 						value={currentInput}
 						onChange={e => setInput(e.target.value)}
 						onKeyUp={e => addWalletIfInputComplete(e)}
-						styles={{ input: { fontSize: "x-large" } }}
-						wrapperProps={{ style: { marginTop: "0.75em" } }}
+						styles={{
+							input: { fontSize: "x-large", margin: "0 0.5em", width: "calc(100% - 1em)", marginBottom: "0.1em" }
+						}}
+						wrapperProps={{ style: { marginTop: "0.5em" } }}
 					/>
 
 				</Accordion.Item>
