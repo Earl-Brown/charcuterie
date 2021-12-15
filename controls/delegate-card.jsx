@@ -1,8 +1,16 @@
 import '../services/dataservice'
+import { Group, Card } from '@mantine/core'
+import { GetDelegateDetail } from '../services/delegateservice'
 
 export const DelegateCard = props => {
-	const { delegate } = props
+	const { delegate, validator } = { ...props, validator: props.delegate.validator_info }
+
+
 	return <>
-		<div style={{ backgroundColor: "pink" }}>{delegate}</div>
+		<Card padding="md" sx={{ backgroundColor: "pink" }}>
+			<pre>
+				{JSON.stringify(validator, undefined, 2)}
+			</pre>
+		</Card>
 	</>
 }

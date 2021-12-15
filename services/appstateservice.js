@@ -2,7 +2,10 @@
 //	load/save configuration from cookies
 
 const state = {
-	wallets: ["0x9fFa90c8D6fBcC44007283BC501556864b756E76"],
+	wallets: [
+		// ["0x9fFa90c8D6fBcC44007283BC501556864b756E76"],
+		"one16h099lfjndm7eqytshywazze5x7shgl856ryrm"
+	],
 	validators: [
 		{
 			address: "",

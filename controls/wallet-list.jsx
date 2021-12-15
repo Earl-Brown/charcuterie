@@ -51,7 +51,7 @@ export const WalletList = props => {
 				iconPosition="right"
 			>
 				<Accordion.Item label="Wallets"
-					style={{ padding: 0 }}
+					sx={{ padding: 0 }}
 				>
 					<div style={{ paddingTop: "0.5em" }}>
 						{wallets.map((a, idx) => Wallet(a))}
