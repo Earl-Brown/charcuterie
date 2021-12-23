@@ -10,6 +10,7 @@ export const DelegateList = props => {
 
 	useAsyncEffect(
 		async _ => {
+			if (delegations !== null) return
 			const list = await GetDelegationsForHarmonyAddresses(wallets)
 			setDelegations(list)
 		}

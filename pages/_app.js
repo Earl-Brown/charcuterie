@@ -16,7 +16,7 @@ export default function Charcuterie({ Component, pageProps }) {
 				primaryColor: 'red'
 			}}
 		>
-			<AppShell style={{ backgroundImage: 'url("/backgrounds/Melamine-wood-005.png")', width: "100%", height: "100%", position: "absolute" }}>
+			<AppShell>
 				<Component {...pageProps} />
 
 			</AppShell>

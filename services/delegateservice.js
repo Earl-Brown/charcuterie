@@ -10,9 +10,18 @@ export async function GetDelegateDetail(addr) {
 	return delegate
 }
 
+export const GetValidatorsForOneHarmonyWallet = async addr => {
+
+}
+
+export const GetValidatorsForHarmonyAddresses = async addrs => {
+
+}
+
 export async function GetDelegationsForOneHarmonyAddress(addr) {
-	console.log("retrieving addr:", addr)
-	const delegations = await GetJson(`https://api.stake.hmny.io/networks/mainnet/delegations/${addr}`)
+	const url = `https://api.stake.hmny.io/networks/mainnet/delegations/${addr}`
+	console.log("retrieving addr:", url)
+	const delegations = await GetJson(url)
 
 	console.log("Delegations retrieved", delegations)
 
