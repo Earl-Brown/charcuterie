@@ -16,7 +16,7 @@ export default function Charcuterie({ Component, pageProps }) {
 				primaryColor: 'red'
 			}}
 		>
-			<AppShell>
+			<AppShell styles={{ main: { overflow: "hidden" } }}>
 				<Component {...pageProps} />
 
 			</AppShell>

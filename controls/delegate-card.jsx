@@ -7,7 +7,7 @@ export const DelegateCard = props => {
 
 
 	return <>
-		<Card padding="md" sx={{ backgroundColor: "pink" }}>
+		<Card padding="md" sx={{ backgroundColor: "pink", overflow: "auto" }}>
 			<pre>
 				{JSON.stringify(validator, undefined, 2)}
 			</pre>
