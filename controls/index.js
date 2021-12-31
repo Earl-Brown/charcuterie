@@ -1,7 +1,6 @@
 import { WalletList } from "./wallet-list"
 import { Deck } from "./deck"
-import { DelegateList } from "./delegate-list"
 import { ValidatorCard } from "./validator-card"
-import { DelegateCard } from './delegate-card'
+import { DelegationCard } from './delegation-card'
 import { Wallet } from './wallet'
-export { WalletList, Deck, DelegateCard, DelegateList, ValidatorCard, Wallet }
+export { WalletList, Deck, DelegationCard, ValidatorCard, Wallet }
